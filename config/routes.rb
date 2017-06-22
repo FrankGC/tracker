@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :user_stocks,except:[:show,:edit,:update]
   root 'pages#home'
   get 'portfolio',to:'users#portfolio'
   get 'search_stocks',to: 'stocks#search'
